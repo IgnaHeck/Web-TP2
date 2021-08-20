@@ -1,0 +1,15 @@
+Display name: Trabajo
+Collection name: trabajos
+
+Fields (con mayuscula la primera letra):
+
+Ubicacion => textfield
+Categoria => textfield
+Logo => textfield
+NombreEmpresa => textfield
+Identificador => number
+Tipo => textfield
+FechaPublicacion => datetime
+Salario => textfield
+Titulo => textfield
+URL => textfield

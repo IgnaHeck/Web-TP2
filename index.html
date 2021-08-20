@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <title>TRABAJO PRACTICO 2</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-css-donut-chart@1"></script>
+    <header class="cabecera">
+        <script>
+            function play() {
+                var audio = document.getElementById("audio");
+                audio.play();
+            }
+        </script>
+        <img class="imagen" src="assets/dinamita.png" onclick="play()" alt="logo">
+        <audio id="audio" src="assets/monkey-flip.mp3"></audio>  
+        <h1 >TP N°2 - Equipo dinamita (6)</h1>
+    </header>
+    <main id="main-container" class="main-container">
+        <section class="left-content">
+            <a
+                v-for="cont in contents"
+                v-bind:key="cont"
+                v-bind:class="['cont-button', { active: currentContent === cont}]"
+                v-on:click="currentContent = cont"
+                class="btn-flip"
+                v-bind:data-back="cont" 
+                v-bind:data-front="cont"
+                ></a>
+        </section>
+        <aside class="main-content">
+            <transition name="fade">
+                <component 
+                v-bind:is="currentTabComponent"
+                class="cont"
+                ></component>
+            </transition>
+        </aside>
+    </main>
+    <footer> 🖥️ TyG Web - 2021</footer>
+    <script src="script.js"></script>
+</body>
+</html>
